@@ -82,7 +82,7 @@ In `app.js` replace the existing content with the below:
 ```
 const express = require('express');
 const app = express();
-app.get('/app', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Hello From Express');
 });
 app.listen(3000);
@@ -94,7 +94,7 @@ module.exports = app;
 ## Step 12
 Navigate to `template.yaml` and 
 *   Replace `app.lambdaHandler` with `lambda.handler`
-*   Replace `Path: /hello` to `Path: /{proxy+}`
+*   Replace `Path: /hello` to `Path: /`
 
 ## Step 13
 Save all the changes and run the below command in the terminal to build the sam application
