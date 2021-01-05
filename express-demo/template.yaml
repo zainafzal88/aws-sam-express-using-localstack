@@ -8,7 +8,7 @@ Description: >
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
   Function:
-    Timeout: 3
+    Timeout: 30
 
 Resources:
   HelloWorldFunction:
@@ -17,11 +17,15 @@ Resources:
       CodeUri: hello-world/
       Handler: lambda.handler
       Runtime: nodejs10.x
+      Environment:
+        Variables:
+          Bucket: zain-test-bucket
+          Endpoint: http://localhost:4572
       Events:
         HelloWorld:
-          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Type: Api
           Properties:
-            Path: /{proxy+}
+            Path: /
             Method: get
 
 Outputs:
