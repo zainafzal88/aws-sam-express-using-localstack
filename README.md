@@ -1,4 +1,4 @@
-# express-in-aws-sam-local
+# express-in-aws-sam-local-using-localstack
 This demo shows you how to run Express App in AWS SAM using LocalStack
 
 ## Requirements
